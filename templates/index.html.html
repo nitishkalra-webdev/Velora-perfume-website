@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+   #navbar {
+    background-color: black;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+#navbar h1 {
+    color: rgb(168, 85, 247);
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#navbar a:hover {
+    color: rgb(168, 85, 247);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+#home{
+    margin-top: 120px;
+    padding: 30px;
+}
+    .hero-content {
+    margin-top: 30px;
+    padding: 25px;
+}
+
+.hero-small {
+    color: #c084fc;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #a855f7;
+    font-style: italic;
+    padding-top: 20px;
+}
+
+.hero-description {
+    width: 400px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid #a855f7;
+    color: #c084fc;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    transition: 0.4s;
+}
+
+.hero-btn:hover {
+    background: #a855f7;
+    color: #050505;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+   
+    #gallery{
+            display: flex;
+           width: 100%;
+           max-width: 550px;
+           height: 500px;
+            gap: 10px;
+        }
+        .panel{
+            flex: 1;
+            background-color: #000;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            cursor: pointer;
+            filter: grayscale(80%);
+            transition: flex 0.6s cubic-bezier(0.25,1,0.5,1);
+        }
+        .p1{
+            background-image: url("../images/pinflik.com__Scent_Style__Woman_Perfumes_to_Enchant___Parf_m__i.jpg");
+        }
+        .p2{
+            background-image: url("../images/pinflik.com__Lebeni_Perfume_Bottle_Design_Art____ampuan__Ambala.jpg");
+        }
+        .p3{
+            background-image: url("../images/pinflik.com__Perfume_with_rose_design___Rose_gold_perfume_aesth.jpg");
+        }
+        .panel:hover{
+            flex: 4;
+            filter: grayscale(0%);
+        }
+
+        /* COLLECTION */
+
+        .gender {
+    padding: 100px 8%;
+     background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08), transparent 60%), #0d0910;
+
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: #f5f5f5;
+    margin-top: 10px;
+}
+
+.section-heading h2 span {
+    color: #a855f7;
+    font-style: italic;
+}
+
+.gender-container {
+    display: flex;
+    gap: 25px;
+}
+
+.gender-card {
+    flex: 1;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.gender-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s ease;
+}
+
+.gender-card:hover img {
+    transform: scale(1.08);
+}
+
+.gender-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    background: linear-gradient(transparent 40%, rgba(0,0,0,0.9));
+}
+
+.gender-content span {
+    color: #c084fc;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.gender-content h3 {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: #f5f5f5;
+    margin: 10px 0 18px;
+}
+
+.gender-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid #a855f7;
+    color: #c084fc;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+    transition: 0.4s;
+}
+
+.gender-btn:hover {
+    background: #a855f7;
+    color: #050505;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+#why{
+    text-align: center;
+}
+hr{
+    color: #a855f7;
+}
+#why h1{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: #f5f5f5;
+}
+
+.why-card {
+    min-height: 220px;
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    border-radius: 25px 5px 25px 5px;
+    color: white;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        145deg,
+        rgba(168, 85, 247, 0.08),
+        rgba(0, 0, 0, 0.3)
+    );
+    transition: 0.4s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+    border-color: #a855f7;
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
+}
+
+.why-icon {
+    font-size: 30px;
+    color: #a855f7;
+    margin-bottom: 18px;
+    margin-top: 0;
+}
+
+.why-card h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 400;
+    color: #c084fc;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 280px;
+    margin: 0;
+}
+
+
+       /* ABOUT */
+       .story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 100px 8%;
+    background-color: #070509;
+}
+
+.story-image {
+    width: 50%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.story-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.05);
+}
+
+.story-content {
+    width: 45%;
+}
+
+.story-content h2 {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    color: #f5f5f5;
+    margin: 15px 0 25px;
+}
+
+.story-content h2 span {
+    color: #a855f7;
+    font-style: italic;
+}
+
+.story-text {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+#reviews{
+    text-align: center;
+    padding: 90px;
+
+}
+#reviews h1{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: #f5f5f5;
+
+}
+
+.review {
+    min-height: 220px;
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    border-radius: 25px 5px 25px 5px;
+    color: white;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        145deg,
+        rgba(168, 85, 247, 0.08),
+        rgba(0, 0, 0, 0.3)
+    );
+    transition: 0.4s ease;
+}
+
+.review:hover {
+    transform: translateY(-6px);
+    border-color: #a855f7;
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
+}
+
+.review h4 {
+    color: #a855f7;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.review h5 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #c084fc;
+    letter-spacing: 2px;
+    margin-top: 18px;
+}
+
+.review p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 320px;
+    margin: 0;
+}
+.newsletter{
+    text-align: center;
+
+     background:
+                radial-gradient(
+                    circle,
+                    rgba(168, 85, 247, 0.15),
+                    transparent 55%
+                ),
+                #070509;
+                padding: 130px;
+}
+.newsletter h1{
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: #f5f5f5;
+}
+.newsletter i{
+    color: grey;
+}
+.newsletter input{
+    width: 40%;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border-color: #a855f7;
+}
+.newsletter button{
+    border: 1px solid #a855f7;
+    width: 15%;
+    background-color: transparent;
+    color: #a855f7;
+    font-size: 15px;
+    padding: 13px;
+    letter-spacing: 2px;
+}
+.newsletter button:hover{
+     background: #a855f7;
+    color: #050505;
+}
+
+ .cta {
+            padding: 120px 8%;
+             text-align: center;
+              background:
+                radial-gradient(
+                    circle,
+                    rgba(168, 85, 247, 0.15),
+                    transparent 55%
+                ),
+                #070509;
+
+        }
+
+        .cta h2 {
+            font-family: Georgia, serif;
+            font-size: 70px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .cta h2 span {
+            color: #a855f7;
+            font-style: italic;
+        }
+
+        .cta p {
+            color: #888;
+            max-width: 550px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 14px;
+            margin-bottom: 35px;
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+            padding: 70px 8% 30px;
+            background-color: #050306;
+            border-top: 1px solid #a855f7;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns:    2fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #a855f7;
+        }
+
+        .footer-logo {
+            color: #a855f7;
+            font-family: "Bodoni Moda", serif;
+            font-size: 32px;
+            letter-spacing: 7px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            color: #666;
+            font-size: 12px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        footer h4 {
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        footer a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            font-size: 11px;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #a855f7;
+        }
+
+        .copyright {
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            color: #444;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+
+        .offcanvas {
+    background-color: #08060a;
+    color: white;
+    border-left: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+#offcanvasRight {
+    width: 45%;
+}
+
+
+/* CART HEADER */
+
+.offcanvas-header {
+    padding: 25px;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.offcanvas-title {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+
+/* CLOSE BUTTON */
+
+.offcanvas .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+}
+
+.offcanvas .btn-close:hover {
+    opacity: 1;
+}
+.offcanvas .btn-danger{
+     background-color: transparent;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+    padding: 4px 9px;
+    font-size: 13px;
+    line-height: 1;
+    transition: 0.3s;
+    margin-left: 300px;
+}
+.offcanvas .btn-danger:hover {
+    background-color: #a855f7;
+    color: #050505;
+    border-color: #a855f7;
+}
+
+
+/* CART BODY */
+
+.offcanvas-body {
+    padding: 25px;
+}
+
+
+/* CART TABLE */
+
+#cart .table {
+    color: #ddd;
+    border-color: rgba(168, 85, 247, 0.2);
+    margin-top: 10px;
+    background-color: transparent;
+    background: transparent !important;
+}
+
+#cart th {
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding: 14px 10px;
+}
+
+#cart td {
+    color: #ddd;
+    font-size: 13px;
+    vertical-align: middle;
+    padding: 16px 10px;
+}
+
+#cart .table th,
+#cart .table td {
+    background-color: #08060a !important;
+    color: #e9d5ff !important;
+}
+
+
+/* QUANTITY BUTTONS */
+
+#cart .btn-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+    padding: 4px 9px;
+    font-size: 13px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+#cart .btn-secondary:hover {
+    background-color: #a855f7;
+    color: #050505;
+    border-color: #a855f7;
+}
+
+
+/* DELETE BUTTON */
+
+#cart .btn-secondary[onclick^="remove"] {
+    border-color: rgba(220, 100, 255, 0.5);
+    color: #d8a4ff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+}
+
+#cart .btn-secondary[onclick^="remove"]:hover {
+    background-color: #a855f7;
+    color: #050505;
+}
+
+
+/* TOTAL SECTION */
+
+#total {
+    padding: 20px 25px;
+    border-top: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+#total h4 {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    display: inline-block;
+    width: 70%;
+}
+
+.btn{
+     padding: 15px 25px;
+    border: 1px solid #a855f7;
+    color: #c084fc;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    transition: 0.4s;
+
+    
+}
+.btn:hover{
+     background: #a855f7;
+    color: #050505;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+#offcanvasRight img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+#formModal .modal-content {
+    background: #08060a;
+    color: white;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.15);
+}
+
+#formModal .modal-header {
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 20px 25px;
+}
+
+#formModal .modal-title {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#formModal .modal-body {
+    padding: 25px;
+}
+
+#formModal .modal-footer {
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 15px 25px;
+}
+
+
+#formModal input.form-control {
+    background-color: #0e0a12;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: white;
+    border-radius: 6px;
+    padding: 11px 13px;
+    margin-bottom: 18px;
+}
+
+#formModal input.form-control::placeholder {
+    color: #777;
+}
+
+#formModal input.form-control:focus {
+    background-color: #0e0a12;
+    color: white;
+    border-color: #a855f7;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+    outline: none;
+}
+#formModal .modal-body .form-control {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+#formModal .modal-body h1 {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+#formModal .form-label {
+    color: #e9d5ff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+#formModal .form-check {
+    padding-left: 30px;
+    margin-top: 5px;
+}
+
+#formModal .form-check-input {
+    background-color: transparent;
+    border: 1px solid #a855f7;
+    width: 18px;
+    height: 18px;
+}
+
+#formModal .form-check-input:checked {
+    background-color: #a855f7;
+    border-color: #a855f7;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+#formModal .form-check-label {
+    color: #e9d5ff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+#formModal .modal-content {
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(168, 85, 247, 0.12);
+}
+#formModal .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+#formModal .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+
+
+
+      
+
+
+
+   
+</style>
+</head>
+<body style="background-color: black;">
+
+        <div class="container-fluid">
+           <div class="row" id="navbar">
+            <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <h1>VELORA</h1>
+    </div>
+    <div class="col-md-6">
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#collection">COLLECTION</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#reviews">REVIEW</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+    <div class="col-md-2" style="text-align: center;">
+        <a class="nav-icon"  data-bs-toggle="offcanvas" href="#offcanvasRight"  aria-controls="offcanvasRight">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+        </svg>
+        <span id="cartCount">0</span>
+    </a>
+</div>
+    <div class="col-md-1"></div>
+</div>
+
+            <div class="row" id="home">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <div class="hero-content">
+
+    <p class="hero-small">THE ESSENCE OF ELEGANCE</p>
+
+    <h1>
+        A SCENT THAT
+        <span>DEFINES YOU</span>
+    </h1>
+
+    <p class="hero-description">
+        Discover a collection of refined fragrances crafted to express
+        your individuality. Every scent tells a story, creates a memory,
+        and leaves an unforgettable impression.
+    </p>
+
+    <a href="#collection" class="hero-btn">
+        EXPLORE COLLECTION
+    </a>
+
+</div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5" id="gallery">
+                     <div class="panel p1"></div>
+                     <div class="panel p2"></div>
+                     <div class="panel p3"></div>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+
+        <!-- COLLECTION -->
+    
+        <section class="gender" id="collection">
+
+    <div class="section-heading">
+        <p class="hero-small">FIND YOUR SIGNATURE</p>
+        <h2>Choose Your <span>Collection</span></h2>
+    </div>
+
+    <div class="gender-container">
+
+        <!-- MEN -->
+        <div class="gender-card">
+            <img src="../images/pinflik.com__Detale__kt_re_m_wi__wi_cej_ni__s_owa__Ona_i_On_w_s.jpg" alt="Men's Collection">
+            <div class="gender-overlay">
+                <div class="gender-content">
+                    <span>FOR HIM</span>
+                    <h3>Men's Collection</h3>
+                    <a href="./velora men collection.html" class="gender-btn">EXPLORE MEN</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WOMEN -->
+        <div class="gender-card">
+            <img src="../images/pinflik.com__The_Moment_of_Scent___Golden_Elegance_in_Motion___.jpg" alt="Women's Collection">
+            <div class="gender-overlay">
+                <div class="gender-content">
+                    <span>FOR HER</span>
+                    <h3>Women's Collection</h3>
+                    <a href="./women collection.html" class="gender-btn">EXPLORE WOMEN</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="container" id="why">
+    <p class="hero hero-small">THE VELORA DIFFERENCE</p>
+    <h1>WHY CHOOSE VELORA</h1><br>
+
+    <div class="row" id="why-grid">
+        <div class="col-md-3">
+            <div class="why-card">
+            <div class="why-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Premium Quality
+                </h3>
+
+                <p>
+                    Carefully selected fragrance
+                    ingredients for a refined
+                    experience.
+                </p>
+            </div>
+         </div>
+
+         <div class="col-md-3">
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Long Lasting
+                </h3>
+
+                <p>
+                    Fragrances designed to stay
+                    with you throughout your day.
+                </p>
+                </div>
+
+            </div>
+
+             <div class="col-md-3">
+                <div class="why-card">
+
+                <div class="why-icon">
+                    ♢
+                </div>
+
+                <h3>
+                    Crafted With Care
+                </h3>
+
+                <p>
+                    Every creation is designed
+                    with attention to detail.
+                </p>
+                </div>
+
+            </div>
+
+             <div class="col-md-3">
+                <div class="why-card">
+
+                <div class="why-icon">
+                    ✧
+                </div>
+
+                <h3>
+                    Made For You
+                </h3>
+
+                <p>
+                    Discover a scent that reflects
+                    your own personality.
+                </p>
+                </div>
+
+            </div>
+    </div><br><hr>
+</div>
+
+
+
+            <section class="story" id="about">
+
+    <div class="story-image">
+        <video src="../images/From Klickpin.com- Garden Wedding Inspiration 23 Ideas to Copy-pin-id-3659243440240569.mp4"  autoplay loop muted alt="The Velora Story">
+    </div>
+
+    <div class="story-content">
+        <p class="hero-small">THE VELORA STORY</p>
+        <h2>More Than<br>A <span>Fragrance.</span></h2>
+        <p class="story-text">
+            Velora was created from a simple belief — fragrance should
+            be more than a scent. It should become a memory.
+            <br><br>
+            Every Velora creation combines refined ingredients,
+            thoughtful design and modern luxury to create fragrances
+            that feel personal and unforgettable.
+        </p>
+        <a href="#" class="hero-btn">DISCOVER OUR STORY</a>
+    </div>
+
+</section>
+
+<section id="reviews">
+    <div class="container">
+        <p class="hero-small">THE VELORA EXPERIENCE</p>
+        <h1>What They Say</h1><br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="review">
+                    <div><h4>★★★★★</h4>
+                    <p>"The fragrance feels incredibly elegant.
+                    It has become my go-to perfume whenever
+                    I want something special."</p>
+                    <h5>—NITISH</h5></div>
+                </div>
+            </div>
+
+             <div class="col-md-4">
+                <div class="review">
+                    <div><h4>★★★★★</h4>
+                    <p> "Beautiful packaging, amazing scent
+                    and a fragrance that actually feels
+                    unique."</p>
+                    <h5>—MANDEEP</h5></div>
+                </div>
+            </div>
+
+             <div class="col-md-4">
+                <div class="review">
+                    <div><h4>★★★★★</h4>
+                    <p>"Velora has a very different feeling.
+                    Sophisticated without being too much."</p>
+                    <h5>—SUKHMAN</h5></div>
+                </div>
+            </div>
+        </div><hr>
+    </div>
+</section>
+
+<section class="newsletter" id="contact">
+    <p class="hero-small">JOIN THE VELORA CIRCLE</p>
+    <h1>Stay in the know</h1>
+    <i>Be the first to discover new fragrances, exclusive launches and special offers</i><br><br>
+    <input type="email" placeholder="Enter your email">
+    <button type="submit">Subscribe</button>
+</section>
+
+
+    <section class="cta">
+
+        <div class="hero-small">
+            YOUR SIGNATURE AWAITS
+        </div>
+
+        <h2>
+            Leave A <span>Memory.</span>
+        </h2>
+
+        <p>
+            Discover a fragrance that becomes uniquely
+            yours. Find the scent that speaks before you do.
+        </p>
+
+        <a href="#collection" class="hero-btn">
+            EXPLORE VELORA
+        </a>
+
+    </section>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div class="footer-about">
+
+                <div class="footer-logo">
+                    VELORA
+                </div>
+
+                <p>
+                    The art of fragrance.
+                    Crafted for those who leave
+                    a lasting impression.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    SHOP
+                </h4>
+
+                <a href="./velora men collection.html">
+                    Men's Collection
+                </a>
+
+                <a href="./women collection.html">
+                    Women's Collection
+                </a>
+
+                <a href="#collection">
+                    Signature Collection
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    INFORMATION
+                </h4>
+
+                <a href="#about">
+                    Our Story
+                </a>
+
+                <a href="#contact">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Shipping
+                </a>
+
+                <a href="#">
+                    Returns
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    FOLLOW US
+                </h4>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 VELORA. ALL RIGHTS RESERVED.
+            </span>
+
+            <span>
+                THE ART OF FRAGRANCE
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">CART</h5>
+    <button class="btn-danger" onclick="clearCart()">CLEAR ALL</button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="cart">
+    
+  </div>
+  <div id="total"></div>
+</div>
+
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Fill Your Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+            <label class="form-label">Name: </label>
+            <input class="form-control" type="text" placeholder="Enter your name">
+            <label class="form-label">Email: </label>
+            <input class="form-control" type="email" placeholder="Enter your email">
+            <label class="form-label">Phone: </label>
+            <input class="form-control" type="number" placeholder="Enter your contact">
+            <label class="form-label">Address: </label>
+            <input class="form-control" type="text" placeholder="Enter Address">
+            <h1>Payment mode:</h1><br>
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+  <label class="form-check-label" for="radioDefault1">
+    CASH ON DELIVERY
+  </label>
+</div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" onclick="orderPlaced()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+
+ let cart=[]
+    let total=0
+    let products=[
+        {
+            id:1,
+            title:"VELORA NOIR",
+            description:"Eau de parfum 50ml",
+            price:2500,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/pinflik.com__Scent_Style__Woman_Perfumes_to_Enchant___Parf_m__i.jpg"
+        },
+        {
+            id:2,
+            title:"VELORA OBSIDIAN",
+            description:"Eau de Toilette 50ml",
+            price:3000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/pinflik.com__Profumo_uomo___Profumi.jpg"
+        },
+        {
+            id:3,
+            title:"VELORA ÉLITÉ",
+            description:"Eau de Cologne 50ml",
+            price:3000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/Black Perfume Bottle with Smoke for Luxury Fragrance Branding.jpg"
+        },
+        {
+            id:4,
+            title:"VELORA ÉCLAT",
+            description:"Eau de parfum 50ml",
+            price:3000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/Bold Masculine Perfume Bottle Display - Male Perfume Product hotography Ideas.jpg"
+        },
+        {
+            id:5,
+            title:"VELORA NOCTIS",
+            description:"Eau de Toilette 50ml",
+            price:3500,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/download (12).jpg"
+        },
+        {
+            id:6,
+            title:"VELORA ÉMERAUDE",
+            description:"Eau de Cologne 50ml",
+            price:4000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/Lebeni perfume bottle design art.jpg"
+        },
+        {
+            id:7,
+            title:"VELORA LUMIÈRE",
+            description:"Eau de parfum 50ml",
+            price:2500,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/pinflik.com__Lebeni_Perfume_Bottle_Design_Art____ampuan__Ambala.jpg"
+        },
+        {
+            id:8,
+            title:"VELORA ROSE",
+            description:"Eau de Toilette 50ml",
+            price:3000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/pinflik.com__Perfume_with_rose_design___Rose_gold_perfume_aesth.jpg"
+        },
+        {
+            id:9,
+            title:"VELORA AMÉTHYSTE",
+            description:"Eau de Cologne 50ml",
+            price:3000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/download (11).jpg"
+        },
+        {
+            id:10,
+            title:"VELORA FLEURÉE",
+            description:"Eau de parfum 50ml",
+            price:3000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/Deer Musk Perfume.jpg"
+        },
+        {
+            id:11,
+            title:"VELORA AURELIA",
+            description:"Eau de Toilette 50ml",
+            price:3500,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/Luxury women parfum.jpg"
+        },
+        {
+            id:12,
+            title:"VELORA SERAPHINE",
+            description:"Eau de Cologne 50ml",
+            price:4000,
+            image:"C:/Users/nitis/Desktop/Velora perfumes/images/Black Aesthetic Wallpaper.jpg"
+        }
+    ]
+
+
+
+    function clearCart(){
+        localStorage.clear();
+        updateCartCount();
+        display_cart();
+    }
+
+    
+
+                    function decrease(id){
+             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let item = cart.find(item=>item.id==id)
+            let product = products.find(p=>p.id==id)
+            if(item){
+                item.quantity--
+                item.price= item.quantity * product.price
+            }
+            localStorage.setItem("cart", JSON.stringify(cart))
+            display_cart()
+            updateCartCount()
+            total_amount()
+        }
+
+         function increase(id){
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let item = cart.find(item=>item.id==id)
+            let product = products.find(p=>p.id==id)
+            
+            if(item){
+                item.quantity++
+                item.price= item.quantity * product.price
+            }
+            localStorage.setItem("cart", JSON.stringify(cart))
+            display_cart()
+            updateCartCount()
+            total_amount()
+        }
+
+
+        function remove(id){
+             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+             cart = cart.filter(item => item.id != id);
+             localStorage.setItem("cart", JSON.stringify(cart));
+
+             display_cart();
+             updateCartCount();
+             total_amount();
+        }
+
+         function display_cart(){
+            console.log(" calling cart")
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            console.log(cart)
+            let cart_div=``
+            cart_div+= `<table class="table" border="2px"><tr>
+                <th></th>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th><tr>`
+
+                    for(element of cart){
+                        // let element= cart[i]
+                        cart_div+= `<tr>
+                            <td> <img src="${element.image}"></td>
+                            <td>${element.title}</td>
+                            <td>`
+                                if(element.quantity<=1){
+                                cart_div+= `<button class=" btn-secondary" onclick="decrease(${element.id})" disabled>-</button>
+                                ${element.quantity}
+                                 <button class=" btn-secondary" onclick="increase(${element.id})">+</button></td>`}
+                                 else{
+                                cart_div+= `<button class=" btn-secondary" onclick="decrease(${element.id})">-</button>
+                                 ${element.quantity}
+                                 <button class=" btn-secondary" onclick="increase(${element.id})">+</button></td>`}
+                                 cart_div+= `<td>${element.price}</td>
+                                 <td><button class="btn-secondary" onclick="remove(${element.id})"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                 </svg></button>
+                                 </tr>`
+                                 }
+                                 `</table>`
+                               document.querySelector("#cart").innerHTML=cart_div
+                               total_amount();
+
+                    }
+                    display_cart();
+
+                     function updateCartCount(){
+                        let cart = JSON.parse(localStorage.getItem("cart")) || []
+                        document.getElementById("cartCount").innerHTML = cart.length
+                    }
+
+        updateCartCount()
+                    function add_to_cart(id){
+                        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                        console.log(cart)
+                        let item= cart.find(p=>p.id===id)
+                        let product = products.find(p=>p.id===id)
+                        // cart.push(product)
+                        if(item){
+                            item.quantity++;
+                            item.price = item.quantity * product.price
+                        }
+                        else{
+                            cart.push({...product, quantity:1})
+                        }
+                        localStorage.setItem("cart", JSON.stringify(cart))
+                        display_cart()
+                        updateCartCount()
+                        
+
+                }  
+
+        function total_amount(){
+             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total_html = ``
+            let total = 0
+            for(let i of cart){
+                console.log(i.price)
+                total +=i.price
+                
+            }
+            console.log("Total amount to pay", total)
+            total_html += `<h4>Total Amount: ${total}/-</h4>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#formModal">Place Order</button>`
+            document.getElementById("total").innerHTML = total_html
+        }
+
+         function orderPlaced() {
+            Swal.fire({
+  title: "Congrats!",
+  text: "Your order has been placed. You will recieve confirmation on Email.",
+  icon: "success"
+});
+    }
+
+
+    const heroTL = gsap.timeline();
+
+    heroTL.from("#home .hero-small", {
+    y: 30,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power3.out"
+});
+
+heroTL.from("#home .hero-content h1", {
+    x: -80,
+    opacity: 0,
+    duration: 0.9,
+    ease: "power3.out"
+});
+
+heroTL.from("#home .hero-description", {
+    x: -50,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power3.out"
+});
+
+heroTL.from("#home .hero-btn", {
+    y: 30,
+    duration: 0.6,
+    ease: "power3.out"
+});
+
+ScrollTrigger.create({
+    trigger: "#home",
+    start: "top 80%",
+    onEnter: () => heroTL.restart(),
+    onEnterBack: () => heroTL.restart(),
+});
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo("#collection",
+    {
+        y: 120,
+        opacity: 0,
+        scale: 0.95
+    },
+    {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        ease: "power4.out",
+
+        scrollTrigger: {
+            trigger: "#collection",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+gsap.fromTo("#why", 
+    { y: 100, opacity: 0, scale: 0.96 },
+    {
+        y: 0, opacity: 1, scale: 1, duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: "#why",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+gsap.fromTo(".story", 
+    { y: 100, opacity: 0, scale: 0.96 },
+    {
+        y: 0, opacity: 1, scale: 1, duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: ".story",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+gsap.fromTo("#reviews", 
+    { y: 100, opacity: 0, scale: 0.96 },
+    {
+        y: 0, opacity: 1, scale: 1, duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: "#reviews",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+gsap.fromTo(".newsletter", 
+    { y: 100, opacity: 0, scale: 0.96 },
+    {
+        y: 0, opacity: 1, scale: 1, duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: ".newsletter",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+gsap.fromTo(".cta",
+    { y: 100, opacity: 0, scale: 0.96 },
+    {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: ".cta",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+gsap.fromTo(".footer-grid",
+    { y: 70, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: ".footer-grid",
+            start: "top 90%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

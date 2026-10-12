@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+body{
+    background-color: black;
+}
+    #navbar {
+    background-color: black;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+#navbar h1 {
+    color: rgb(168, 85, 247);
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#navbar a:hover {
+    color: rgb(168, 85, 247);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.btn{
+     padding: 15px 25px;
+    border: 1px solid #a855f7;
+    color: #c084fc;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    transition: 0.4s;
+
+    
+}
+.btn:hover{
+     background: #a855f7;
+    color: #050505;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+h1{
+    color: rgb(168, 85, 247);
+    font-family: "Bodoni Moda", serif;
+}
+ #products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: #0e0a12;
+
+            border: 1px solid rgba(168, 85, 247, 0.25);
+
+            padding: 25px;
+
+            text-align: center;
+
+            transition: 0.5s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+
+            border-color: #a855f7;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-image {
+            height: 350px;
+
+            padding: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 25px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(168, 85, 247, 0.08),
+                    transparent 65%
+                );
+        }
+
+        .product-image img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            font-family: "Bodoni moda", serif;
+
+            color: white;
+
+            font-size: 29px;
+
+            font-weight: 400;
+
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: #777;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #c084fc;
+
+            font-size: 15px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+   VELORA LUXURY CART
+   ========================= */
+
+.offcanvas {
+    background-color: #08060a;
+    color: white;
+    border-left: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+#offcanvasRight {
+    width: 45%;
+}
+
+
+/* CART HEADER */
+
+.offcanvas-header {
+    padding: 25px;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.offcanvas-title {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+
+/* CLOSE BUTTON */
+
+.offcanvas .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+}
+
+.offcanvas .btn-close:hover {
+    opacity: 1;
+}
+
+.offcanvas .btn-danger{
+     background-color: transparent;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+    padding: 4px 9px;
+    font-size: 13px;
+    line-height: 1;
+    transition: 0.3s;
+    margin-left: 300px;
+}
+.offcanvas .btn-danger:hover {
+    background-color: #a855f7;
+    color: #050505;
+    border-color: #a855f7;
+}
+
+
+/* CART BODY */
+
+.offcanvas-body {
+    padding: 25px;
+}
+
+
+/* CART TABLE */
+
+#cart .table {
+    color: #ddd;
+    border-color: rgba(168, 85, 247, 0.2);
+    margin-top: 10px;
+    background-color: transparent;
+    background: transparent !important;
+}
+
+#cart th {
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding: 14px 10px;
+}
+
+#cart td {
+    color: #ddd;
+    font-size: 13px;
+    vertical-align: middle;
+    padding: 16px 10px;
+}
+
+#cart .table th,
+#cart .table td {
+    background-color: #08060a !important;
+    color: #e9d5ff !important;
+}
+
+
+/* QUANTITY BUTTONS */
+
+#cart .btn-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+    padding: 4px 9px;
+    font-size: 13px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+#cart .btn-secondary:hover {
+    background-color: #a855f7;
+    color: #050505;
+    border-color: #a855f7;
+}
+
+
+/* DELETE BUTTON */
+
+#cart .btn-secondary[onclick^="remove"] {
+    border-color: rgba(220, 100, 255, 0.5);
+    color: #d8a4ff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+}
+
+#cart .btn-secondary[onclick^="remove"]:hover {
+    background-color: #a855f7;
+    color: #050505;
+}
+
+
+/* TOTAL SECTION */
+
+#total {
+    padding: 20px 25px;
+    border-top: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+#total h4 {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    display: inline-block;
+    width: 70%;
+}
+
+#offcanvasRight img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* VELORA ORDER MODAL */
+#formModal .modal-content {
+    background: #08060a;
+    color: white;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.15);
+}
+
+#formModal .modal-header {
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 20px 25px;
+}
+
+#formModal .modal-title {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#formModal .modal-body {
+    padding: 25px;
+}
+
+#formModal .modal-footer {
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 15px 25px;
+}
+
+
+#formModal input.form-control {
+    background-color: #0e0a12;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: white;
+    border-radius: 6px;
+    padding: 11px 13px;
+    margin-bottom: 18px;
+}
+
+#formModal input.form-control::placeholder {
+    color: #777;
+}
+
+#formModal input.form-control:focus {
+    background-color: #0e0a12;
+    color: white;
+    border-color: #a855f7;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+    outline: none;
+}
+#formModal .modal-body .form-control {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+#formModal .modal-body h1 {
+    font-family: "Bodoni Moda", serif;
+    color: #c084fc;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+#formModal .form-label {
+    color: #e9d5ff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+#formModal .form-check {
+    padding-left: 30px;
+    margin-top: 5px;
+}
+
+#formModal .form-check-input {
+    background-color: transparent;
+    border: 1px solid #a855f7;
+    width: 18px;
+    height: 18px;
+}
+
+#formModal .form-check-input:checked {
+    background-color: #a855f7;
+    border-color: #a855f7;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+#formModal .form-check-label {
+    color: #e9d5ff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+#formModal .modal-content {
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(168, 85, 247, 0.12);
+}
+#formModal .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+#formModal .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+    
+
+
+
+    
+
+      
+
+</style>
+</head>
+<body>
+      <div class="container">
+           <div class="row" id="navbar">
+            <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <a href="./velora webpage.html"><h1>VELORA</h1></a>
+    </div>
+    <div class="col-md-6">
+        <ul class="nav-links">
+            <li><a href="./velora webpage.html">HOME</a></li>
+            <li><a href="./velora webpage.html">COLLECTION</a></li>
+            <li><a href="./velora webpage.html">ABOUT</a></li>
+            <li><a href="./velora webpage.html">REVIEW</a></li>
+            <li><a href="./velora webpage.html">CONTACT</a></li>
+        </ul>
+    </div>
+    <div class="col-md-2" style="text-align: center;">
+    <a class="nav-icon"  data-bs-toggle="offcanvas" href="#offcanvasRight"  aria-controls="offcanvasRight">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+        </svg>
+        <span id="cartCount">0</span>
+    </a>
+ </div>
+    <div class="col-md-1"></div>
+ </div><br><br><br><br>
+
+ <div class="row">
+    <div class="col-md-12">
+        <h1>Men's collection</h1><hr>
+        <div class="container">
+            <div id="products">
+
+            </div>
+            
+               
+        </div>
+    </div>
+
+
+    
+  </div>
+
+  
+
+
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">CART</h5>
+        <button class="btn-danger" onclick="clearCart()">CLEAR ALL</button>
+
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="cart">
+    
+  </div>
+  <div id="total">
+    
+  </div>
+</div>
+
+<div class="modal fade modal-lg"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content bg-dark" >
+      <div class="modal-header" style="border-bottom:1px solid #c084fc">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">VELORA - Quick View</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-5" id="modal-body">
+            <!-- Add Quick View function -->
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Fill Your Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+            <label class="form-label">Name: </label>
+            <input class="form-control" type="text" placeholder="Enter your name">
+            <label class="form-label">Email: </label>
+            <input class="form-control" type="email" placeholder="Enter your email">
+            <label class="form-label">Phone: </label>
+            <input class="form-control" type="number" placeholder="Enter your contact">
+            <label class="form-label">Address: </label>
+            <input class="form-control" type="text" placeholder="Enter Address">
+            <h1>Payment mode:</h1><br>
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+  <label class="form-check-label" for="radioDefault1">
+    CASH ON DELIVERY
+  </label>
+</div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" onclick="orderPlaced()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    //localStorage.clear()
+    let cart=[]
+    let total=0
+    let products=[
+        {
+            id:1,
+            title:"VELORA NOIR",
+            description:"Eau de parfum 50ml",
+            price:2500,
+            image:"../images/pinflik.com__Scent_Style__Woman_Perfumes_to_Enchant___Parf_m__i.jpg"
+        },
+        {
+            id:2,
+            title:"VELORA OBSIDIAN",
+            description:"Eau de Toilette 50ml",
+            price:3000,
+            image:"../images/pinflik.com__Profumo_uomo___Profumi.jpg"
+        },
+        {
+            id:3,
+            title:"VELORA ÉLITÉ",
+            description:"Eau de Cologne 50ml",
+            price:3000,
+            image:"../images/Black Perfume Bottle with Smoke for Luxury Fragrance Branding.jpg"
+        },
+        {
+            id:4,
+            title:"VELORA ÉCLAT",
+            description:"Eau de parfum 50ml",
+            price:3000,
+            image:"../images/Bold Masculine Perfume Bottle Display - Male Perfume Product hotography Ideas.jpg"
+        },
+        {
+            id:5,
+            title:"VELORA NOCTIS ",
+            description:"Eau de Toilette 50ml",
+            price:3500,
+            image:"../images/download (12).jpg"
+        },
+        {
+            id:6,
+            title:"VELORA ÉMERAUDE",
+            description:"Eau de Cologne 50ml",
+            price:4000,
+            image:"../images/Lebeni perfume bottle design art.jpg"
+        }
+    ]
+
+     function quickView(id){
+            let quick_html = ``
+            bootstrap.Modal.getOrCreateInstance(document.getElementById("exampleModal")).show();
+            let product = products.find(p=>p.id==id)
+            quick_html += `<div style="color:white" class="quick-view">
+                    <img src="${product.image}" width="30%" >
+                    <div style="display:inline-block;width:60%;margin-left:50px;vertical-align:middle">
+                        <span class="product-tag" style="color: rgb(168, 85, 247);font-size: 14px;">VELORA SIGNATURE</span>
+                        <h2 style="margin-top:20px;margin-bottom:10px">${product.title}</h2>
+                        <div class="quick-price" style="color: rgb(168, 85, 247)">${product.price}/-</div>
+                        <p style="margin-top:20px">${product.description}. A refined composition created for a memorable impression.</p>
+                        <p><strong>Fragrance family:</strong> Floral • Woody • Amber</p>
+                        <button class="checkout-btn btn" onclick="add_to_cart(${product.id}); showToast('${product.title} added to cart')">ADD TO CART</button>
+                    </div>
+                </div>`
+
+            document.getElementById("modal-body").innerHTML = quick_html
+        }
+
+     function displayProducts(){
+            let products_div=``
+
+            for( let i of products){
+                products_div+=`<div class="product-card">
+                <div class="product-image">
+                    <img src="${i.image}"></div>
+                    <h3>${i.title}</h3><p>${i.description}</p><div class="price">${i.price}/-</div>
+                    <button class="btn" style="margin-right:10px" onclick=quickView(${i.id})>Quick View</button>
+                        <button class="btn" onclick="add_to_cart(${i.id})">Add to cart</button></div>
+                        </div>`
+            }
+            document.querySelector("#products").innerHTML=products_div
+        }
+        displayProducts();
+
+        function clearCart(){
+        localStorage.clear();
+        updateCartCount()
+        display_cart();
+    }
+
+         function decrease(id){
+             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let item = cart.find(item=>item.id==id)
+            let product = products.find(p=>p.id==id)
+            if(item){
+                item.quantity--
+                item.price= item.quantity * product.price
+            }
+            localStorage.setItem("cart", JSON.stringify(cart))
+            display_cart()
+            updateCartCount()
+            total_amount()
+        }
+
+         function increase(id){
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let item = cart.find(item=>item.id==id)
+            let product = products.find(p=>p.id==id)
+            
+            if(item){
+                item.quantity++
+                item.price= item.quantity * product.price
+            }
+            localStorage.setItem("cart", JSON.stringify(cart))
+            display_cart()
+            updateCartCount()
+            total_amount()
+        }
+
+
+        function remove(id){
+             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+             cart = cart.filter(item => item.id != id);
+             localStorage.setItem("cart", JSON.stringify(cart));
+
+             display_cart();
+             updateCartCount();
+             total_amount();
+        }
+
+         function display_cart(){
+            console.log(" calling cart")
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            console.log(cart)
+            let cart_div=``
+            cart_div+= `<table class="table" border="2px"><tr>
+                <th></th>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th><tr>`
+
+                    for(element of cart){
+                        // let element= cart[i]
+                        cart_div+= `<tr>
+                            <td> <img src="${element.image}"></td>
+                            <td>${element.title}</td>
+                            <td>`
+                                if(element.quantity<=1){
+                                cart_div+= `<button class=" btn-secondary" onclick="decrease(${element.id})" disabled>-</button>
+                                ${element.quantity}
+                                 <button class=" btn-secondary" onclick="increase(${element.id})">+</button></td>`}
+                                 else{
+                                cart_div+= `<button class=" btn-secondary" onclick="decrease(${element.id})">-</button>
+                                 ${element.quantity}
+                                 <button class=" btn-secondary" onclick="increase(${element.id})">+</button></td>`}
+                                 cart_div+= `<td>${element.price}</td>
+                                 <td><button class="btn-secondary" onclick="remove(${element.id})"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                 </svg></button>
+                                 </tr>`
+                                 }
+                                 `</table>`
+                               document.querySelector("#cart").innerHTML=cart_div
+                               total_amount();
+
+                    }
+                    display_cart();
+                    //localStorage.clear()
+                    function updateCartCount(){
+                        let cart = JSON.parse(localStorage.getItem("cart")) || []
+                        document.getElementById("cartCount").innerHTML = cart.length
+                    }
+
+                    updateCartCount()
+                    function add_to_cart(id){
+                        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                        console.log(cart)
+                        let item= cart.find(p=>p.id===id)
+                        let product = products.find(p=>p.id===id)
+                        // cart.push(product)
+                        if(item){
+                            item.quantity++;
+                            item.price = item.quantity * product.price
+                        }
+                        else{
+                            cart.push({...product, quantity:1})
+                        }
+                        localStorage.setItem("cart", JSON.stringify(cart))
+                        display_cart()
+                        updateCartCount()
+                        
+
+                }  
+
+                 function total_amount(){
+             let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total_html = ``
+            let total = 0
+            for(let i of cart){
+                console.log(i.price)
+                total +=i.price
+                
+            }
+            console.log("Total amount to pay", total)
+            total_html += `<h4>Total Amount  : ${total}/-</h4>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#formModal">Place Order</button>`
+            
+            document.getElementById("total").innerHTML = total_html
+        }
+
+        function orderPlaced() {
+         Swal.fire({
+  title: "Congrats!",
+  text: "Your order has been placed. You will recieve confirmation on Email.",
+  icon: "success"
+});
+    }
+
+
+    gsap.fromTo("#products",
+    { y: 100, opacity: 0, scale: 0.96 },
+    {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: "#products",
+            start: "top 80%",
+            toggleActions: "restart none none reset"
+        }
+    }
+);
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
